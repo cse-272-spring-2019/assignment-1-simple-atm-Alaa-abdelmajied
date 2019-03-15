@@ -55,7 +55,7 @@ public class MyAtm {
 	}
 
 	public boolean withdraw(double transactionAmount) {
-		if (balance >= transactionAmount && transactionAmount != 0) {
+		if (balance >= transactionAmount && transactionAmount >= 0) {
 			transaction = new Transactions("Withdraw Transaction", transactionAmount);
 			user.commitTransaction(Transactions.WITHDRAW_TRANSACTION, transactionAmount);
 			balance = user.getBalance();
